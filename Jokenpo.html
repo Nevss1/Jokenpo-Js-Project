@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jokenpo!</title>
+    </head>
+    <body>
+        <h1>Rock Paper Scissors</h1>
+        
+        <input type="button" value="Rock" onclick="
+            randomNumber = Math.random();
+            if (randomNumber <= 1/3) {
+                computerMove = 'rock';
+                alert(`You picked ${'rock'}. Computer picked ${computerMove}. Tie`);
+            } else if (1/3 < randomNumber && randomNumber <= 2/3) {
+                computerMove = 'paper';
+                alert(`You picked ${'rock'}. Computer picked ${computerMove}. You Lose`);
+            } else if (randomNumber > 2/3) {
+                computerMove = 'Scissors';
+                alert(`You picked ${'rock'}. Computer picked ${computerMove}. You Win`);
+            }
+        ">
+        <input type="button" value="Paper" onclick="
+            randomNumber = Math.random();
+            if (randomNumber <= 1/3) {
+                computerMove = 'rock';
+                alert(`You picked ${'paper'}. Computer picked ${computerMove}. You Win`);
+            } else if (1/3 < randomNumber && randomNumber <= 2/3) {
+                computerMove = 'paper';
+                alert(`You picked ${'paper'}. Computer picked ${computerMove}. Tie`);
+            } else if (randomNumber > 2/3) {
+                computerMove = 'Scissors';
+                alert(`You picked ${'paper'}. Computer picked ${computerMove}. You Lose`);
+            }
+        ">
+        <input type="button" value="Scissors" onclick="
+                    randomNumber = Math.random();
+            if (randomNumber <= 1/3) {
+                computerMove = 'rock';
+                alert(`You picked ${'scissors'}. Computer picked ${computerMove}. You Lose`);
+            } else if (1/3 < randomNumber && randomNumber <= 2/3) {
+                computerMove = 'paper';
+                alert(`You picked ${'scissors'}. Computer picked ${computerMove}. You Win`);
+            } else if (randomNumber > 2/3) {
+                computerMove = 'Scissors';
+                alert(`You picked ${'scissors'}. Computer picked ${computerMove}. Tie`);
+            }
+        ">     
+    </body>
+    <script>
+        let randomNumber = -1;
+        let computerMove = '';
+
+        const message = 'iae' && true;
+        console.log(message);
+    </script>
+</html>
