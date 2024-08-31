@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            const product = {
+                name: 'socks',
+                price: 300,
+                falar: function iae(){
+                    console.log(`preço é ${this.price}`);
+                }
+            };
+            product.price = 120;
+            console.log(product.falar());
+            console.log(product);
+            console.log(JSON.parse(JSON.stringify(product)) );
+        </script>
+    </body>
+</html>
