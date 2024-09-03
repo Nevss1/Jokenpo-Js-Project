@@ -4,27 +4,47 @@
         <title>Jokenpo!</title>
     </head>
     <body>
-        <h1>Rock Paper Scissors</h1>
-        <input type="button" value="rock" onclick="
-            jokenpo('rock', randomNumber);
-        ">
-        <input type="button" value="paper" onclick="
-            jokenpo('paper', randomNumber);
-        ">
-        <input type="button" value="scissors" onclick="
-            jokenpo('scissors', randomNumber);
-        ">   
-        <input type="button" value="Reset score" onclick="
-            score.wins = 0;
-            score.losses = 0;
-            score.ties = 0;
-        ">
+        <div style="text-align: center; margin-top: 20px;">
+            <h3>Rock Paper Scissors</h3>
+            <input type="button" value="rock" onclick="
+                jokenpo('rock', randomNumber);
+            ">
+            <input type="button" value="paper" onclick="
+                jokenpo('paper', randomNumber);
+            ">
+            <input type="button" value="scissors" onclick="
+                jokenpo('scissors', randomNumber);
+            ">
+
+            <p class="js-result"></p>
+            <p class="js-moves"></p>
+            <p class="js-score"></p>
+
+            <input type="button" value="Reset score" onclick="
+                score.wins = 0;
+                score.losses = 0;
+                score.ties = 0;
+                updateScoreElement();
+            ">
+        </div>
     </body>
     <script>
-        const score = JSON.parse(localStorage.getItem('score'))
+        const score = JSON.parse(localStorage.getItem
+        ('score')) || {
+            wins: 0,
+            losses: 0,
+            ties: 0
+        }
         let randomNumber = -1;
         let computerMove = '';
-  
+
+        updateScoreElement();
+
+        function updateScoreElement(){
+            document.querySelector('.js-score')
+                .innerHTML = `Wins: ${score.wins}, 
+                Losses ${score.losses}, ties ${score.ties}`
+        }
 
         function jokenpo(plrMove, randnum){
             randomNumber = Math.random();
@@ -74,9 +94,14 @@
                     score.ties += 1;
                 }
             }
+
+            document.querySelector('.js-result')
+                .innerHTML = result;
+            document.querySelector('.js-moves')
+                .innerHTML = `You ${plrMove} - ${pcMove} Computer`;
+            updateScoreElement();
+
             localStorage.setItem('score', JSON.stringify(score));
-            alert(`You picked ${plrMove}. Computer picked ${pcMove}. ${result}
-Wins: ${score.wins}, Losses ${score.losses}, ties ${score.ties}`)
         };
     </script>
 </html>
