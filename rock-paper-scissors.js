@@ -7,6 +7,11 @@ const score = JSON.parse(localStorage.getItem
 let randomNumber = -1;
 let computerMove = '';
 
+document.querySelector('.rock-button').addEventListener('click', () => jokenpo('rock'));
+document.querySelector('.paper-button').addEventListener('click', () => jokenpo('paper'));
+document.querySelector('.scissors-button').addEventListener('click', () => jokenpo('scissors'));
+
+
 updateScoreElement();
 
 function updateScoreElement(){
@@ -28,7 +33,7 @@ function jokenpo(plrMove){
             result = 'You Lose!';
             score.losses += 1;
         } else if (randnum > 2/3) {
-            pcMove = 'Scissors';
+            pcMove = 'scissors';
             result = 'You Win!';
             score.wins += 1;
         }
@@ -43,7 +48,7 @@ function jokenpo(plrMove){
             result = 'Tie!'
             score.ties += 1;
         } else if (randnum > 2/3) {
-            pcMove = 'Scissors';
+            pcMove = 'scissors';
             result = 'You Lose!';
             score.losses += 1;
         }
@@ -58,7 +63,7 @@ function jokenpo(plrMove){
             result = 'You Win!';
             score.wins += 1;
         } else if (randnum > 2/3) {
-            pcMove = 'Scissors';
+            pcMove = 'scissors';
             result = 'Tie!'
             score.ties += 1;
         }
