@@ -12,15 +12,15 @@
             <h1>Rock Paper Scissors!</h1>
 
             <div style="display: flex; justify-content: center; gap: 30px;" >
-                <button class="emoji-container" onclick="jokenpo('rock', randomNumber)">
+                <button class="emoji-container" onclick="jokenpo('rock')">
                     <img src="emojis-icons/rock-emoji.png" class="move-icon">
                 </button>
     
-                <button class="emoji-container" onclick="jokenpo('paper', randomNumber)">
+                <button class="emoji-container" onclick="jokenpo('paper')">
                     <img src="emojis-icons/paper-emoji.png" class="move-icon">
                 </button>
     
-                <button class="emoji-container" onclick="jokenpo('scissors', randomNumber)">
+                <button class="emoji-container" onclick="jokenpo('scissors')">
                     <img src="emojis-icons/scissors-emoji.png" class="move-icon">
                 </button>
             </div>
@@ -38,6 +38,11 @@
                 score.losses = 0;
                 score.ties = 0;
                 updateScoreElement();
+            ">
+            <input class="auto-play-button" type="button"
+            value="Auto Play" onclick="
+                autoPlay();
+      
             ">
         </div>
     </body>
